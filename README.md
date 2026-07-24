@@ -228,11 +228,15 @@ gym/SKILL.md MUST define:
   "same as last", "+2.5", "hit target", "done x3", "-1 rep". Confirm what you
   logged in one short line. If I mislog, "fix that" / "undo" corrects the last
   entry.
-• Save integrity — at session start, if you land on a stray session branch or
-  find leftover uncommitted/unpushed changes, consolidate them onto main and
-  push, then say so in one line. At session end, confirm in plain words what
-  saved ("12 sets logged, pushed to main ✓"); if a push failed, say so and tell
-  me exactly what to tap. Never let me believe it saved when it didn't.
+• Save integrity (invisible + non-technical) — do all git work SILENTLY and
+  never expose it to me: say "saved your progress ✓", never "pushed to main".
+  Save as you go: after each exercise, append to log.csv and commit locally, so
+  an interrupted session loses at most one exercise; upload at session end. At
+  session start, if past work didn't save (uncommitted, unpushed, or a stray
+  session branch), quietly consolidate it onto main and say plainly "looks like
+  a session or two didn't save, sorted now ✓". It doesn't matter where I run it
+  (Claude Code or Codex, one ongoing chat is fine). Never let me believe it
+  saved when it didn't.
 • Effort & time shortcuts — one word reshapes the session on the spot:
   "wrecked" / "tired" → auto-deload today; "short on time" / "15 min" → trim to
   the priorities and one quick finisher; "feeling strong" → push the top sets;
@@ -303,11 +307,10 @@ PHASE 3 — Hand off (leave me ready to train)
 4. Point me at CHEATSHEET.md and reassure me: there's no command to memorise —
    just say you want to train, log however's easiest (type, voice, or a photo),
    and say "done" to finish. You handle everything else.
-5. Recommend the simplest reliable way to run sessions: the Claude Code mobile
-   app or desktop, working on the main branch, so every workout saves straight
-   to main. Warn me that a web flow which creates a session branch with a
-   "Create PR" button only saves once it's merged to main — so the app/desktop
-   is the low-friction path, and either way you'll confirm the save each time.
+5. Reassure me it just works: run it in Claude Code or Codex, on phone or laptop,
+   keep it in one ongoing chat or start fresh whenever (it picks up where I left
+   off), and it saves my progress automatically after every session. I never
+   touch git or files myself.
 
 ───────────────────────────────────────────────────────────────────
 OPTIONAL QUICK-FILL (delete if you'd rather just be interviewed)
