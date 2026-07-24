@@ -31,9 +31,11 @@ Once it's set up, running it from your phone is the same: open the Claude Code a
 It's built to a real standard: progressive overload, sensible volume, proper warm-ups, deloads, and hard safety rules. It won't hand you "1000 push-ups", won't program through an injury, and won't help you crash-diet. The aim is a plan a qualified trainer would look at and nod. It won't replace a great coach standing next to you fixing your form, but for planning, logging, and getting stronger over months, it holds up. It also speaks whatever language you write in.
 
 ## Your data stays yours
-Your training folder is created **private** and holds your personal data. Nothing is shared or posted anywhere. Gymbro is open source, so you can read exactly what the prompt does before you run it.
+Gymbro is a prompt you run in your own AI account. Your training folder is created **private** and holds your personal data, so nothing is ever sent to me or shared anywhere. It's open source, so you can read exactly what the prompt does before you run it.
 
-> Not medical advice. Train sensibly, and see a professional for pain, injury, or anything medical.
+> **Not medical advice.** Check with a doctor before starting a new training program, especially if you have any medical condition, injury, or health concern.
+>
+> Not affiliated with or endorsed by Anthropic or OpenAI. "Claude" and "ChatGPT" are trademarks of their respective owners.
 
 ---
 
@@ -54,7 +56,9 @@ me thoroughly, then build a personal AI training system called "gymbro" that
 will live in this repo and act as my personal trainer across future sessions.
 Do not rush to writing files — the quality depends on how well you interview me
 first. Keep everything plain-English and phone-readable. Work through the phases
-in order and tell me what you did at each step.
+in order and tell me what you did at each step. Do as much as you can for me and
+keep my involvement minimal: only pause when you genuinely need me (creating or
+logging into my accounts). Aim to get me set up and interviewed in ~10 minutes.
 
 ═══════════════════════════════════════════════════════════════════
 PHASE 0 — Get GitHub working and create the "gymbro" repo (do first)

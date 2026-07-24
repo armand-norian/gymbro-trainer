@@ -102,9 +102,30 @@
   footer{border-top:1px solid var(--line); padding:30px 0 56px; color:var(--muted); font-size:14px}
   footer .credit{font-family:var(--mono); letter-spacing:.02em}
   footer a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line)} footer a:hover{border-color:var(--ink)}
+  footer .fine{margin-top:12px; font-size:12.5px; line-height:1.5; color:var(--muted); opacity:.85; max-width:72ch}
+  footer .fine a{color:var(--muted)}
+  .modal-backdrop{position:fixed; inset:0; background:rgba(10,10,12,.55); display:none;
+    align-items:center; justify-content:center; padding:18px; z-index:50;}
+  .modal-backdrop.open{display:flex}
+  .modal-card{background:var(--surface); border:1px solid var(--line); border-radius:16px;
+    box-shadow:0 24px 60px -18px rgba(0,0,0,.5); width:100%; max-width:420px; overflow:hidden; position:relative;}
+  .modal-head{display:flex; align-items:center; justify-content:space-between; padding:14px 12px 14px 18px; border-bottom:1px solid var(--line)}
+  .modal-head h3{margin:0; font-size:16px; font-weight:750}
+  .modal-close{background:transparent; border:none; color:var(--muted); font-size:24px; line-height:1; cursor:pointer; padding:2px 10px; border-radius:8px}
+  .modal-close:hover{color:var(--ink)}
+  .modal-body{height:min(72vh,640px); background:var(--surface)}
+  .modal-body iframe{width:100%; height:100%; border:0; display:block; background:transparent}
   a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:6px}
   @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
+<!--
+  ANALYTICS (optional, privacy-friendly / cookieless — no cookie banner needed):
+  Paste your GoatCounter or Plausible snippet here. The page already fires custom
+  events "copy-prompt" and "kofi-open" via a global count() call, so once the
+  snippet is present you'll see how many people copied the prompt.
+  GoatCounter example:
+  <script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+-->
 </head>
 <body>
 <main class="wrap">
@@ -122,7 +143,7 @@
       <a class="btn btn-ghost" href="#how">How it works</a>
     </div>
     <div class="req">
-      <span><b>~10 min</b> to set up</span>
+      <span><b>~10 min</b>, setup and interview</span>
       <span><b>Free</b> GitHub account</span>
       <span>A <b>paid</b> Claude or ChatGPT plan</span>
       <span>No coding, promise</span>
@@ -170,7 +191,7 @@
       <details><summary>Can I really run it from my phone?</summary>
         <div class="a">Yep. Open the Claude Code app (or the ChatGPT app and pick Codex), open your Gymbro folder, and tell it you're training. Because your data lives in that GitHub folder, your phone and laptop always see the same thing. It also speaks whatever language you write in.</div></details>
       <details><summary>Is my data private?</summary>
-        <div class="a">Yes. Your folder is created <b>private</b> and holds your personal training data. Nothing is shared or posted anywhere. Gymbro itself is open source, so you can read exactly what the prompt does before you run it.</div></details>
+        <div class="a">Yes, completely. Gymbro is just a prompt: it runs in <b>your own</b> AI account and your data lives in <b>your own</b> private repo, so I never see it, touch it, or store it. Nothing is shared or posted anywhere, and because it's open source you can read exactly what the prompt does before you run it.</div></details>
     </div>
   </section>
 
@@ -181,15 +202,26 @@
       <a class="btn star" href="https://github.com/armand-norian/gymbro-trainer" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
         Star it on GitHub</a>
-      <a class="btn coffee" href="https://ko-fi.com/armandm" target="_blank" rel="noopener">🥤 Buy me a protein shake</a>
+      <a class="btn coffee" id="kofiBtn" href="https://ko-fi.com/armandm" target="_blank" rel="noopener">🥤 Buy me a protein shake</a>
       <a class="btn site" href="https://norian.ai" target="_blank" rel="noopener">See what else I build →</a>
     </div>
   </section>
 
   <footer>
-    <div class="credit">Built by <a href="https://norian.ai" target="_blank" rel="noopener">Armand at norian.ai</a>. Free and open source. Not medical advice, so train sensibly and see a pro if something hurts.</div>
+    <div class="credit">Built by <a href="https://norian.ai" target="_blank" rel="noopener">Armand at norian.ai</a>. Free and open source. <a href="https://github.com/armand-norian/gymbro-trainer/issues" target="_blank" rel="noopener">Found a bug or have an idea? Let me know.</a></div>
+    <div class="fine">Not medical advice. Check with a doctor before starting a new training program, especially if you have any medical condition, injury, or health concern. Gymbro is an open-source prompt you run in your own AI account; your data stays in your own private repo and is never sent to me. Not affiliated with or endorsed by Anthropic or OpenAI; "Claude" and "ChatGPT" are trademarks of their respective owners.</div>
   </footer>
 </main>
+
+<div class="modal-backdrop" id="kofiModal" role="dialog" aria-modal="true" aria-label="Support Gymbro on Ko-fi">
+  <div class="modal-card">
+    <div class="modal-head">
+      <h3>🥤 Buy me a protein shake</h3>
+      <button class="modal-close" id="kofiClose" aria-label="Close">&times;</button>
+    </div>
+    <div class="modal-body" id="kofiBody"></div>
+  </div>
+</div>
 
 <script type="text/plain" id="promptSource">[gymbro — a build-your-own AI personal trainer. Free to share.
 Created by Armand · norian.ai · ⭐ github.com/armand-norian/gymbro-trainer
@@ -203,7 +235,9 @@ me thoroughly, then build a personal AI training system called "gymbro" that
 will live in this repo and act as my personal trainer across future sessions.
 Do not rush to writing files — the quality depends on how well you interview me
 first. Keep everything plain-English and phone-readable. Work through the phases
-in order and tell me what you did at each step.
+in order and tell me what you did at each step. Do as much as you can for me and
+keep my involvement minimal: only pause when you genuinely need me (creating or
+logging into my accounts). Aim to get me set up and interviewed in ~10 minutes.
 
 ═══════════════════════════════════════════════════════════════════
 PHASE 0 — Get GitHub working and create the "gymbro" repo (do first)
@@ -463,10 +497,22 @@ BEGIN NOW with Phase 0. Do not skip ahead to writing files.</script>
       if(navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(t);
       return new Promise(function(res){var a=document.createElement('textarea');a.value=t;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(e){}document.body.removeChild(a);res();});
     }
+    function track(name){try{if(window.goatcounter&&window.goatcounter.count){window.goatcounter.count({path:name,event:true});}}catch(e){}}
     var main=document.getElementById('copyMain');
-    main.addEventListener('click',function(){copy(src).then(function(){main.classList.add('ok');var l=main.querySelector('.lbl');var p=l.textContent;l.textContent='Copied ✓';setTimeout(function(){main.classList.remove('ok');l.textContent=p},1600);});});
+    main.addEventListener('click',function(){copy(src).then(function(){track('copy-prompt');main.classList.add('ok');var l=main.querySelector('.lbl');var p=l.textContent;l.textContent='Copied ✓';setTimeout(function(){main.classList.remove('ok');l.textContent=p},1600);});});
     var top=document.getElementById('copyTop');
-    top.addEventListener('click',function(){copy(src).then(function(){top.classList.add('ok');var t=top.childNodes[top.childNodes.length-1];var p=t.nodeValue;t.nodeValue=' Copied ✓';setTimeout(function(){top.classList.remove('ok');t.nodeValue=p},1600);document.getElementById('prompt').scrollIntoView({behavior:'smooth',block:'start'});});});
+    top.addEventListener('click',function(){copy(src).then(function(){track('copy-prompt');top.classList.add('ok');var t=top.childNodes[top.childNodes.length-1];var p=t.nodeValue;t.nodeValue=' Copied ✓';setTimeout(function(){top.classList.remove('ok');t.nodeValue=p},1600);document.getElementById('prompt').scrollIntoView({behavior:'smooth',block:'start'});});});
+
+    var kBtn=document.getElementById('kofiBtn'), kModal=document.getElementById('kofiModal'),
+        kClose=document.getElementById('kofiClose'), kBody=document.getElementById('kofiBody'), kLoaded=false;
+    function openK(e){ if(e)e.preventDefault();
+      if(!kLoaded){ var f=document.createElement('iframe'); f.src='https://ko-fi.com/armandm/?hidefeed=true&widget=true&embed=true&preview=true'; f.title='Ko-fi donation'; f.setAttribute('loading','lazy'); kBody.appendChild(f); kLoaded=true; }
+      kModal.classList.add('open'); document.body.style.overflow='hidden'; track('kofi-open'); kClose.focus(); }
+    function closeK(){ kModal.classList.remove('open'); document.body.style.overflow=''; }
+    kBtn.addEventListener('click',openK);
+    kClose.addEventListener('click',closeK);
+    kModal.addEventListener('click',function(e){ if(e.target===kModal) closeK(); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape' && kModal.classList.contains('open')) closeK(); });
   })();
 </script>
 </body>
