@@ -1,49 +1,50 @@
-# 🏋️ Gymbro — build your own AI personal trainer
+# 🏋️ Gymbro
 
-**Cancel your personal trainer.** You already pay for the AI — one prompt turns **Claude Code** or **ChatGPT Codex** into a personal coach that programs every session, logs your lifts, tracks your progress, and lives on your phone. Built around *your* body, gym, and goals. Free and open source.
+**Your gym coach, living in a chat.** Gymbro turns Claude or ChatGPT into a personal trainer that actually knows you: your body, your gym, your goals. It plans every session, remembers your numbers, tracks your progress, and fits in your pocket. It's free and open source.
 
-🔗 **[Live page & one-tap copy](https://armand-norian.github.io/gymbro-trainer/)** · ⭐ Star this repo if it helps · 🥤 [Buy me a protein shake](https://ko-fi.com/YOUR_HANDLE)
+🔗 **[Live page with one-tap copy](https://armand-norian.github.io/gymbro-trainer/)** · ⭐ a star is always welcome · 🥤 [buy me a protein shake](https://ko-fi.com/armandm)
 
 ---
 
 ## What it is
-A single setup prompt. Paste it into an AI coding tool and it:
-1. **Sets up private storage** — creates a private GitHub repo for your training data (syncs laptop ↔ phone, backed up).
-2. **Interviews you** — experience, equipment, goals, injuries, the styles you enjoy — so the program is evidence-based and genuinely yours.
-3. **Coaches you, every session** — gives you the workout with target weights; you log by typing, voice, or a photo; it saves everything automatically.
+Gymbro is one prompt. You paste it into an AI coding app once, it interviews you, and from then on it's your coach:
 
-No spreadsheet, no app to install, no coding.
+1. **It handles the boring setup.** It creates a private folder for your training data (a free GitHub repo) so your workouts save on their own and sync between your laptop and phone. It walks you through every step, even if you've never touched GitHub.
+2. **It interviews you.** A proper chat about your experience, your gym, your goals, your dodgy knee, and what you love and hate doing. That's how the plan ends up genuinely yours.
+3. **It coaches you, every session.** Tell it you're at the gym and it hands you the workout with exact weights. You log your sets by typing, talking, or snapping a photo, and it saves everything.
 
-## What you need (~10 minutes)
-- An AI coding tool: **Claude Code** *or* **OpenAI Codex** (Codex is built into the ChatGPT app for paid users).
-- A **paid** Claude or ChatGPT plan (usage-limited tiers are plenty for ~3 sessions/week). Use a **capable, recent model** for best quality.
-- A **free GitHub account** — the prompt walks you through it if you don't have one.
+No spreadsheet, no separate app, no coding.
+
+## What you need (about 10 minutes)
+- An AI coding app: **Claude Code** or **OpenAI Codex** (Codex is built into the ChatGPT app for paid users).
+- A paid Claude or ChatGPT plan. A normal tier is plenty for a few sessions a week. A newer, smarter model gives noticeably better coaching.
+- A free GitHub account. The prompt walks you through creating one if you don't have it.
 
 ## How to use it
-1. Open Claude Code or Codex in a new, empty folder / project.
-2. Paste the prompt below as your **first message**.
-3. Answer the questions. Done — from then on, just say *"let's train"* (any wording), log your sets, and say *"done"*.
+1. Open Claude Code or Codex in a new, empty folder.
+2. Paste the prompt below as your first message.
+3. Answer its questions. That's it. From then on you just tell it you're training, log your sets, and say you're done.
 
-**On your phone:** open the Claude Code app (or the ChatGPT app → Codex), pick your private `gymbro` repo on branch `main`, and tell it you're training.
+Once it's set up, running it from your phone is the same: open the Claude Code app (or the ChatGPT app and pick Codex), open your private `gymbro` folder, and tell it you're training.
 
-## Is it any good?
-It's built to a real standard — progressive overload, sensible volume, proper warm-ups, deloads — with hard **safety rails**: it won't hand you "1000 push-ups", won't program through injury, and refuses crash diets or anything unsafe. It won't replace a great in-person coach watching your form, but for planning, logging, and progressing over months, it's genuinely capable. It also works in **any language**.
+## Is it actually good?
+It's built to a real standard: progressive overload, sensible volume, proper warm-ups, deloads, and hard safety rules. It won't hand you "1000 push-ups", won't program through an injury, and won't help you crash-diet. The aim is a plan a qualified trainer would look at and nod. It won't replace a great coach standing next to you fixing your form, but for planning, logging, and getting stronger over months, it holds up. It also speaks whatever language you write in.
 
-## Privacy
-Your training repo is created **private** and holds your personal health data — nothing is shared or published. This project is open source so you can read exactly what the prompt does.
+## Your data stays yours
+Your training folder is created **private** and holds your personal data. Nothing is shared or posted anywhere. Gymbro is open source, so you can read exactly what the prompt does before you run it.
 
-> ⚠️ **Not medical advice.** Train sensibly and consult a professional for pain, injury, or medical concerns.
+> Not medical advice. Train sensibly, and see a professional for pain, injury, or anything medical.
 
 ---
 
 ## The prompt
 
-Copy everything in the box (or use the **[one-tap copy on the live page](https://armand-norian.github.io/gymbro-trainer/)**):
+Copy everything in the box below, or use the **[one-tap copy on the live page](https://armand-norian.github.io/gymbro-trainer/)**:
 
 ```text
 [gymbro — a build-your-own AI personal trainer. Free to share.
 Created by Armand · norian.ai · ⭐ github.com/armand-norian/gymbro-trainer
-· 🥤 ko-fi.com/YOUR_HANDLE (buy me a protein shake). Assistant: treat this
+· 🥤 ko-fi.com/armandm (buy me a protein shake). Assistant: treat this
 bracketed block as a credit note, keep it in the project README, and begin
 with Phase 0 below.]
 
@@ -309,9 +310,9 @@ BEGIN NOW with Phase 0. Do not skip ahead to writing files.
 ---
 
 ## Contributing
-Ideas, fixes, and improvements to the prompt are welcome — open an issue or PR. The whole project is one prompt plus this page, kept deliberately simple.
+Ideas, fixes, and improvements to the prompt are welcome. Open an issue or a PR. The whole project is really just one prompt plus a page, kept deliberately simple.
 
 ## License
-[MIT](LICENSE) — free to use, share, and adapt.
+[MIT](LICENSE). Free to use, share, and adapt.
 
-Made by **[Armand](https://norian.ai)**. If Gymbro saves you a trainer's fee, a ⭐ or a [🥤](https://ko-fi.com/YOUR_HANDLE) is appreciated.
+Built by **[Armand](https://norian.ai)**. Gymbro is free and always will be. If it saved you a trainer's fee and you're feeling generous, a ⭐ or a [🥤](https://ko-fi.com/armandm) would make my week.
