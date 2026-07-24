@@ -41,8 +41,13 @@
   .eyebrow{font-family:var(--mono); font-size:12.5px; font-weight:600; letter-spacing:.16em;
     text-transform:uppercase; color:var(--accent); display:inline-flex; align-items:center; gap:.6em;}
   .eyebrow::before{content:""; width:26px; height:2px; background:var(--accent); display:inline-block}
-  header.hero{padding:70px 0 30px}
-  h1{font-size:clamp(42px,8.5vw,78px); line-height:.97; margin:.28em 0 .16em; font-weight:800;
+  header.hero{padding:52px 0 34px}
+  .hero-grid{display:grid; grid-template-columns:1fr; gap:38px; align-items:center}
+  @media(min-width:880px){ .hero-grid{grid-template-columns:1fr 320px; gap:50px} header.hero{padding:60px 0 46px} }
+  .hero-visual{display:flex; flex-direction:column; align-items:center}
+  .phone-cap{margin:14px 0 0; font-family:var(--mono); font-size:11px; letter-spacing:.09em;
+    text-transform:uppercase; color:var(--muted)}
+  h1{font-size:clamp(38px,6.2vw,58px); line-height:1.0; margin:.28em 0 .16em; font-weight:800;
     letter-spacing:-.03em; text-wrap:balance; text-transform:uppercase;}
   h1 .b{color:var(--accent)}
   .lede{font-size:clamp(18px,2.4vw,21px); color:var(--muted); max-width:60ch; margin:.2em 0 0}
@@ -124,9 +129,9 @@
     white-space:pre-line; font-variant-numeric:tabular-nums}
   .phone .coach .bubble{background:var(--surface); border:1px solid var(--line); border-top-left-radius:5px; color:var(--ink)}
   .phone .me .bubble{background:var(--accent); color:var(--accent-ink); border-top-right-radius:5px}
-  .phone .bubble.photo{padding:5px}
-  .phone .bubble.photo .ph{width:148px; height:90px; border-radius:11px; background:linear-gradient(135deg,var(--steel),#1e2c37);
-    color:#fff; display:grid; place-items:center; font-size:11px; line-height:1.7; text-align:center}
+  .phone .bubble.photo{padding:4px}
+  .phone .bubble.photo .ph{width:150px; height:94px; border-radius:11px; overflow:hidden; display:block}
+  .phone .bubble.photo .ph svg{display:block; width:100%; height:100%}
   .phone .typing .bubble{display:inline-flex; gap:4px; padding:13px 13px}
   .phone .typing i{width:6px; height:6px; border-radius:50%; background:var(--muted); display:inline-block; animation:blink 1.2s infinite}
   .phone .typing i:nth-child(2){animation-delay:.2s} .phone .typing i:nth-child(3){animation-delay:.4s}
@@ -154,39 +159,39 @@
 <body>
 <main class="wrap">
   <header class="hero">
-    <span class="eyebrow">Gymbro · free · open source</span>
-    <h1>Turn the AI you already pay for<br>into your <span class="b">personal trainer.</span></h1>
-    <p class="lede">It's one prompt. Gymbro gets to know your body, your gym and your goals, then plans
-      every session, remembers your numbers and tracks your progress. It runs right inside the Claude
-      or ChatGPT app, so it's on your phone at the gym and your laptop at home. And yes, it's <b>free</b>.</p>
-    <div class="actions">
-      <button class="btn btn-primary" id="copyTop">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-        Copy the prompt
-      </button>
-      <a class="btn btn-ghost" href="#how">How it works</a>
-    </div>
-    <div class="req">
-      <span><b>~10 min</b>, setup and interview</span>
-      <span><b>Free</b> GitHub account</span>
-      <span>A <b>paid</b> Claude or ChatGPT plan</span>
-      <span>No coding, promise</span>
-    </div>
-  </header>
-
-  <section id="demo">
-    <div class="kicker"><span class="eyebrow">See it in action</span><h2>A whole session, in one chat.</h2></div>
-    <div class="demo-wrap">
-      <div class="phone">
-        <div class="screen">
-          <div class="statusbar"><span>9:41</span><span class="dots">●●●</span></div>
-          <div class="appbar"><div class="av">🏋️</div><div class="who"><b>Gymbro</b><span>your coach</span></div></div>
-          <div class="chat" id="demoChat"></div>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Gymbro · free · open source</span>
+        <h1>Turn the AI you already pay for<br>into your <span class="b">personal trainer.</span></h1>
+        <p class="lede">It's one prompt. Gymbro gets to know your body, your gym and your goals, then plans
+          every session, remembers your numbers and tracks your progress. It runs right inside the Claude
+          or ChatGPT app, so it's on your phone at the gym and your laptop at home. And yes, it's <b>free</b>.</p>
+        <div class="actions">
+          <button class="btn btn-primary" id="copyTop">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy the prompt
+          </button>
+          <a class="btn btn-ghost" href="#how">How it works</a>
+        </div>
+        <div class="req">
+          <span><b>~10 min</b>, setup and interview</span>
+          <span><b>Free</b> GitHub account</span>
+          <span>A <b>paid</b> Claude or ChatGPT plan</span>
+          <span>No coding, promise</span>
         </div>
       </div>
-      <p class="caption">A ~20 second loop. Show up, log your sets, done.</p>
+      <div class="hero-visual">
+        <div class="phone">
+          <div class="screen">
+            <div class="statusbar"><span>9:41</span><span class="dots">●●●</span></div>
+            <div class="appbar"><div class="av">🏋️</div><div class="who"><b>Gymbro</b><span>your coach</span></div></div>
+            <div class="chat" id="demoChat"></div>
+          </div>
+        </div>
+        <p class="phone-cap">A real session, on loop</p>
+      </div>
     </div>
-  </section>
+  </header>
 
   <section id="how">
     <div class="kicker"><span class="eyebrow">How it works</span><h2>Paste once. Train forever.</h2></div>
@@ -569,9 +574,10 @@ BEGIN NOW with Phase 0. Do not skip ahead to writing files.</script>
       {w:'me',t:"done ✅"},
       {w:'coach',t:"Session saved and synced to your phone. Friday: legs and back. Rest up 👊"}
     ];
+    var MACHINE_SVG='<svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="gbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#26333f"/><stop offset="1" stop-color="#0e1720"/></linearGradient></defs><rect width="160" height="100" fill="url(#gbg)"/><ellipse cx="90" cy="86" rx="66" ry="7" fill="#000" opacity="0.30"/><line x1="30" y1="84" x2="140" y2="30" stroke="#aeb7c0" stroke-width="4" stroke-linecap="round"/><line x1="34" y1="88" x2="144" y2="34" stroke="#7f8993" stroke-width="3" stroke-linecap="round"/><rect x="128" y="18" width="18" height="4" rx="2" fill="#c7ced5"/><line x1="137" y1="22" x2="137" y2="33" stroke="#8a949e" stroke-width="3"/><circle cx="95" cy="58" r="13" fill="#2b333c" stroke="#525d68" stroke-width="2"/><circle cx="108" cy="50" r="11" fill="#DC4E28"/><circle cx="108" cy="50" r="3.5" fill="#0e1720"/><rect x="15" y="66" width="27" height="10" rx="3" fill="#3a4854"/><rect x="15" y="51" width="9" height="21" rx="3" fill="#31414c"/><line x1="20" y1="55" x2="12" y2="49" stroke="#8a949e" stroke-width="3" stroke-linecap="round"/><text x="7" y="94" font-family="monospace" font-size="8" fill="#ffffff" opacity="0.55">09:41</text></svg>';
     function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
     function html(s){ return s.photo
-      ? '<div class="bubble photo"><div class="ph">📷<br>machine display</div></div>'
+      ? '<div class="bubble photo"><div class="ph">'+MACHINE_SVG+'</div></div>'
       : '<div class="bubble">'+esc(s.t)+'</div>'; }
     function addRow(s){
       var r=document.createElement('div'); r.className='row '+(s.w==='me'?'me':'coach');
@@ -585,12 +591,13 @@ BEGIN NOW with Phase 0. Do not skip ahead to writing files.</script>
     }
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if(reduce){ steps.forEach(addRow); return; }
+    function dwell(s){ if(s.photo) return 2600; var n=(s.t||'').length; return Math.min(5400, Math.max(2200, n*55)); }
     var i=0;
     function next(){
-      if(i>=steps.length){ setTimeout(reset,3200); return; }
+      if(i>=steps.length){ setTimeout(reset,4800); return; }
       var s=steps[i];
-      if(s.w==='coach'){ var tp=typing(); setTimeout(function(){ chat.removeChild(tp); addRow(s); i++; setTimeout(next,1100); },780); }
-      else { addRow(s); i++; setTimeout(next,950); }
+      if(s.w==='coach'){ var tp=typing(); setTimeout(function(){ chat.removeChild(tp); addRow(s); i++; setTimeout(next,dwell(s)); },950); }
+      else { addRow(s); i++; setTimeout(next,dwell(s)); }
     }
     function reset(){ chat.innerHTML=''; i=0; setTimeout(next,400); }
     var started=false;
