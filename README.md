@@ -60,6 +60,12 @@ in order and tell me what you did at each step. Do as much as you can for me and
 keep my involvement minimal: only pause when you genuinely need me (creating or
 logging into my accounts). Aim to get me set up and interviewed in ~10 minutes.
 
+BEFORE ANYTHING, confirm you can actually run this: you need to execute terminal
+commands and read/write files, which means Claude Code or OpenAI Codex. If you
+cannot (for example this is a normal Claude or ChatGPT chat window), do NOT
+attempt the steps. Tell me to open Claude Code or ChatGPT Codex (Codex is built
+into the ChatGPT app for paid users) and paste this there, then stop.
+
 ═══════════════════════════════════════════════════════════════════
 PHASE 0 — Get GitHub working and create the "gymbro" repo (do first)
 ═══════════════════════════════════════════════════════════════════

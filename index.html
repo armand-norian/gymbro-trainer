@@ -109,7 +109,7 @@
   footer a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line)} footer a:hover{border-color:var(--ink)}
   .demo-wrap{display:flex; flex-direction:column; align-items:center}
   .phone{width:300px; max-width:86vw; background:var(--surface); border:1px solid var(--line);
-    border-radius:40px; padding:12px; box-shadow:0 34px 70px -26px rgba(0,0,0,.45)}
+    border-radius:40px; padding:12px; box-shadow:0 14px 34px -20px rgba(0,0,0,.34)}
   .phone .screen{background:var(--surface-2); border:1px solid var(--line); border-radius:30px;
     overflow:hidden; height:500px; display:flex; flex-direction:column}
   .phone .statusbar{display:flex; justify-content:space-between; align-items:center; padding:12px 20px 6px;
@@ -217,7 +217,7 @@
       </div>
       <pre class="prompt" id="promptView" aria-label="Setup prompt">Loading the prompt...</pre>
     </div>
-    <p class="hint"><b>Heads up, it's a long one.</b> That's on purpose: all that detail is what makes your coach any good. One tap copies the whole thing. Paste it into Claude Code or Codex (any AI coding app works), then answer the questions.</p>
+    <p class="hint"><b>Where does this go?</b> Into <b>Claude Code</b> or <b>ChatGPT Codex</b> (Codex is built into the ChatGPT app), not the normal chat window. Paste it as your first message and it takes over from there. It's long on purpose, that detail is what makes your coach good, and one tap copies all of it. Drop it in the wrong place and it'll politely point you to the right one.</p>
   </section>
 
   <section id="faq">
@@ -281,6 +281,12 @@ first. Keep everything plain-English and phone-readable. Work through the phases
 in order and tell me what you did at each step. Do as much as you can for me and
 keep my involvement minimal: only pause when you genuinely need me (creating or
 logging into my accounts). Aim to get me set up and interviewed in ~10 minutes.
+
+BEFORE ANYTHING, confirm you can actually run this: you need to execute terminal
+commands and read/write files, which means Claude Code or OpenAI Codex. If you
+cannot (for example this is a normal Claude or ChatGPT chat window), do NOT
+attempt the steps. Tell me to open Claude Code or ChatGPT Codex (Codex is built
+into the ChatGPT app for paid users) and paste this there, then stop.
 
 ═══════════════════════════════════════════════════════════════════
 PHASE 0 — Get GitHub working and create the "gymbro" repo (do first)
