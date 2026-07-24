@@ -438,9 +438,14 @@ gym/SKILL.md MUST define:
   ("pull-up, pronated shoulder-width"). Never leave a movement ambiguous.
 • Realistic sizing — fit my real time budget and pace; don't overstuff; respect
   gym etiquette (don't hog several machines in one superset).
-• Logging — I report in the agreed shorthand; parse it, append rows to log.csv,
-  then git add/commit with a dated message and git PUSH at session end so my
-  data reaches my phone. Also accept: dictated/voice text, a PHOTO of a machine
+• Logging & saving — at session START, make sure you're on `main` and git pull
+  so you read my latest data (I may train from phone or laptop). I report in the
+  agreed shorthand; parse it, append rows to log.csv, then git add/commit with a
+  dated message and `git push origin main` at session end. The data MUST land on
+  `main`: if the environment put you on a session branch (e.g. a "Create PR"
+  flow), merge it into main before finishing, and verify `git status` is clean
+  and synced. A session isn't done until the log is committed and on main. Also
+  accept: dictated/voice text, a PHOTO of a machine
   display or my handwritten notes (parse the numbers), and lazy shortcuts —
   "same as last", "+2.5", "hit target", "done x3", "-1 rep". Confirm what you
   logged in one short line. If I mislog, "fix that" / "undo" corrects the last
