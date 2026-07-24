@@ -228,6 +228,11 @@ gym/SKILL.md MUST define:
   "same as last", "+2.5", "hit target", "done x3", "-1 rep". Confirm what you
   logged in one short line. If I mislog, "fix that" / "undo" corrects the last
   entry.
+• Save integrity — at session start, if you land on a stray session branch or
+  find leftover uncommitted/unpushed changes, consolidate them onto main and
+  push, then say so in one line. At session end, confirm in plain words what
+  saved ("12 sets logged, pushed to main ✓"); if a push failed, say so and tell
+  me exactly what to tap. Never let me believe it saved when it didn't.
 • Effort & time shortcuts — one word reshapes the session on the spot:
   "wrecked" / "tired" → auto-deload today; "short on time" / "15 min" → trim to
   the priorities and one quick finisher; "feeling strong" → push the top sets;
@@ -298,6 +303,11 @@ PHASE 3 — Hand off (leave me ready to train)
 4. Point me at CHEATSHEET.md and reassure me: there's no command to memorise —
    just say you want to train, log however's easiest (type, voice, or a photo),
    and say "done" to finish. You handle everything else.
+5. Recommend the simplest reliable way to run sessions: the Claude Code mobile
+   app or desktop, working on the main branch, so every workout saves straight
+   to main. Warn me that a web flow which creates a session branch with a
+   "Create PR" button only saves once it's merged to main — so the app/desktop
+   is the low-friction path, and either way you'll confirm the save each time.
 
 ───────────────────────────────────────────────────────────────────
 OPTIONAL QUICK-FILL (delete if you'd rather just be interviewed)
