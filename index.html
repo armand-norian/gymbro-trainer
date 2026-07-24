@@ -13,7 +13,7 @@
     --shadow:0 1px 0 rgba(23,24,26,.04), 0 12px 34px -18px rgba(23,24,26,.28);
     --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
-    --maxw:880px;
+    --maxw:1040px;
   }
   @media (prefers-color-scheme:dark){
     :root{
@@ -41,18 +41,18 @@
   .eyebrow{font-family:var(--mono); font-size:12.5px; font-weight:600; letter-spacing:.16em;
     text-transform:uppercase; color:var(--accent); display:inline-flex; align-items:center; gap:.6em;}
   .eyebrow::before{content:""; width:26px; height:2px; background:var(--accent); display:inline-block}
-  header.hero{padding:52px 0 34px}
-  .hero-grid{display:grid; grid-template-columns:1fr; gap:38px; align-items:center}
-  @media(min-width:880px){ .hero-grid{grid-template-columns:1fr 320px; gap:50px} header.hero{padding:60px 0 46px} }
+  header.hero{padding:38px 0 30px}
+  .hero-grid{display:grid; grid-template-columns:1fr; gap:34px; align-items:center}
+  @media(min-width:860px){ .hero-grid{grid-template-columns:1.15fr 320px; gap:52px} header.hero{padding:44px 0 40px} }
   .hero-visual{display:flex; flex-direction:column; align-items:center}
   .phone-cap{margin:14px 0 0; font-family:var(--mono); font-size:11px; letter-spacing:.09em;
     text-transform:uppercase; color:var(--muted)}
-  h1{font-size:clamp(38px,6.2vw,58px); line-height:1.0; margin:.28em 0 .16em; font-weight:800;
+  h1{font-size:clamp(31px,3.9vw,46px); line-height:.98; margin:.1em 0 .12em; font-weight:800;
     letter-spacing:-.03em; text-wrap:balance; text-transform:uppercase;}
   h1 .b{color:var(--accent)}
-  .lede{font-size:clamp(18px,2.4vw,21px); color:var(--muted); max-width:60ch; margin:.2em 0 0}
+  .lede{font-size:clamp(15.5px,1.7vw,17.5px); color:var(--muted); max-width:52ch; margin:.2em 0 0}
   .lede b{color:var(--ink); font-weight:600}
-  .actions{display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-top:30px}
+  .actions{display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-top:24px}
   .btn{font-family:var(--sans); font-weight:700; font-size:15.5px; border:1px solid transparent;
     border-radius:11px; padding:13px 20px; cursor:pointer; text-decoration:none;
     display:inline-flex; align-items:center; gap:9px; transition:transform .12s ease, filter .15s ease, border-color .15s ease;}
@@ -62,7 +62,7 @@
   .btn-ghost{background:transparent; color:var(--ink); border-color:var(--line)}
   .btn-ghost:hover{border-color:var(--ink)}
   .btn svg{width:17px;height:17px;display:block}
-  .req{margin-top:20px; font-family:var(--mono); font-size:13px; color:var(--muted);
+  .req{margin-top:15px; font-family:var(--mono); font-size:12.5px; color:var(--muted);
     display:flex; flex-wrap:wrap; gap:8px 18px;}
   .req b{color:var(--ink); font-weight:600}
   section{padding:44px 0; border-top:1px solid var(--line)}
@@ -111,7 +111,7 @@
   .phone{width:300px; max-width:86vw; background:var(--surface); border:1px solid var(--line);
     border-radius:40px; padding:12px; box-shadow:0 34px 70px -26px rgba(0,0,0,.45)}
   .phone .screen{background:var(--surface-2); border:1px solid var(--line); border-radius:30px;
-    overflow:hidden; height:560px; display:flex; flex-direction:column}
+    overflow:hidden; height:500px; display:flex; flex-direction:column}
   .phone .statusbar{display:flex; justify-content:space-between; align-items:center; padding:12px 20px 6px;
     font-family:var(--mono); font-size:11px; color:var(--muted)}
   .phone .statusbar .dots{letter-spacing:3px}
