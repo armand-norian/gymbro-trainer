@@ -1,6 +1,6 @@
 # 🏋️ Gymbro
 
-**Your gym coach, living in a chat.** Gymbro turns Claude or ChatGPT into a personal trainer that actually knows you: your body, your gym, your goals. It plans every session, remembers your numbers, tracks your progress, and fits in your pocket. It's free and open source.
+**Turn the AI you already pay for into your personal trainer.** Gymbro gets to know your body, your gym and your goals, then plans every session, remembers your numbers and tracks your progress. It runs right inside the Claude or ChatGPT app, so it's on your phone at the gym and your laptop at home. It's free and open source.
 
 🔗 **[Live page with one-tap copy](https://armand-norian.github.io/gymbro-trainer/)** · ⭐ a star is always welcome · 🥤 [buy me a protein shake](https://ko-fi.com/armandm)
 
@@ -315,4 +315,4 @@ Ideas, fixes, and improvements to the prompt are welcome. Open an issue or a PR.
 ## License
 [MIT](LICENSE). Free to use, share, and adapt.
 
-Built by **[Armand](https://norian.ai)**. Gymbro is free and always will be. If it saved you a trainer's fee and you're feeling generous, a ⭐ or a [🥤](https://ko-fi.com/armandm) would make my week.
+Built by **[Armand](https://norian.ai)**. Gymbro is free and always will be. If it saved you a trainer's fee, a ⭐ or a [🥤](https://ko-fi.com/armandm) would make my week.
